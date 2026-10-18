@@ -16,7 +16,7 @@ const products = [
     id: 'silvia',
     ar: 'رخام سيلفيا',
     en: 'Silvia Marble',
-    img: 'silvia.jpg',
+    img: 'silviaa.jpg',
     arDesc: 'رخام مصري بعروق طبيعية ناعمة وملمس فاخر، مناسب للأرضيات والحوائط وأسطح الاستقبال والمشاريع التي تحتاج لمظهر دافئ.',
     enDesc: 'Egyptian marble with soft natural veins and refined texture, suitable for floors and reception counters.'
   },
