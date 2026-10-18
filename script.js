@@ -8,7 +8,7 @@ const products = [
     discount: true,
     ar: 'رخام صني منيا',
     en: 'Sunny Menia Marble',
-    img: 'sunnyy-meniaa.jpg',
+    img: 'sunny-menia.jpg',
     arDesc: 'رخام مصري بيج دافئ من أشهر الخامات المطلوبة في الأرضيات والحوائط والسلالم، يتميز بدرجاته الهادئة وقابليته للتشطيب بأكثر من شكل.',
     enDesc: 'A warm beige Egyptian marble, highly popular for floors, walls and stairs with flexible finishes.'
   },
@@ -16,7 +16,7 @@ const products = [
     id: 'silvia',
     ar: 'رخام سيلفيا',
     en: 'Silvia Marble',
-    img: 'silviaaa.jpg',
+    img: 'silvia.jpg',
     arDesc: 'رخام مصري بعروق طبيعية ناعمة وملمس فاخر، مناسب للأرضيات والحوائط وأسطح الاستقبال والمشاريع التي تحتاج لمظهر دافئ.',
     enDesc: 'Egyptian marble with soft natural veins and refined texture, suitable for floors and reception counters.'
   },
