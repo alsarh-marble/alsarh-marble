@@ -1,19 +1,117 @@
 
 const WHATSAPP='201130102500';
 let currentLang='ar';
-const products=[
- {id:'sunny-menia',discount:true,ar:'رخام صني منيا',en:'Sunny Menia Marble',img:'sunny-menia.jpg',arDesc:'رخام مصري بيج دافئ من أشهر الخامات المطلوبة في الأرضيات والحوائط والسلالم، يتميز بدرجاته الهادئة وقابليته للتشطيب بأكثر من شكل، ويمنح المساحات إحساسًا بالاتساع والفخامة.',enDesc:'A warm beige Egyptian marble, highly popular for floors, walls and stairs. Its calm tone and flexible finishes create a bright, spacious and elegant atmosphere.'},
- {id:'galala',ar:'رخام جلالة',en:'galala.jpg',img:'galala.jpg',arDesc:'رخام مصري بلون كريمي فاتح ومظهر كلاسيكي راقٍ، مناسب للمشاريع السكنية والتجارية والواجهات الداخلية والأرضيات، ويتميز بسهولة تنسيقه مع الديكورات الحديثة والكلاسيكية.',enDesc:'A light creamy Egyptian marble with a classic elegant look, ideal for residential and commercial projects, interior cladding and flooring.'},
- {id:'silvia',ar:'رخام سلفيا',en:'Silvia Marble',img:'silvia.jpg',arDesc:'رخام مصري بعروق طبيعية ناعمة وملمس فاخر، مناسب للأرضيات والحوائط وأسطح الاستقبال والمشاريع التي تحتاج إلى مظهر دافئ مع قوة عملية.',enDesc:'An Egyptian marble with soft natural veins and a refined texture, suitable for floors, walls, reception counters and warm luxurious interiors.'},
- {id:'cresta',ar:'رخام كريستا',en:'Cresta Marble',img:'cresta.jpg',arDesc:'خامة رخامية بدرجات هادئة وعروق مميزة، تضيف لمسة طبيعية للمساحات الداخلية، وتناسب الأرضيات والحوائط والديكورات التي تعتمد على الفخامة الهادئة.',enDesc:'A calm-toned marble with distinctive veins, adding a natural luxury touch to interiors, walls, floors and refined decoration.'},
- {id:'natural-marble',ar:'رخام طبيعي',en:'Natural Marble',img:'natural-marble.jpg',arDesc:'رخام طبيعي مختار بعناية من المحاجر المصرية، يجمع بين الجمال والقوة ويستخدم في الأرضيات والحوائط والسلالم والتصميمات المعمارية المتنوعة.',enDesc:'Carefully selected natural marble from Egyptian quarries, combining beauty and strength for floors, walls, stairs and architectural applications.'},
- {id:'granite',ar:'جرانيت',en:'Granite',img:'granite.jpg',arDesc:'الجرانيت خيار قوي وعملي للمطابخ والأرضيات والأماكن الأكثر استخدامًا، يتميز بصلابة عالية وتنوع ألوانه وقدرته على تحمل الاستخدام اليومي.',enDesc:'Granite is a strong practical choice for kitchens, floors and high-traffic areas, known for durability, color variety and daily-use resistance.'},
- {id:'marble-slabs',ar:'ألواح رخام',en:'Marble Slabs',img:'marble-slabs.jpg',arDesc:'ألواح كبيرة يتم تجهيزها للمشاريع والفنادق والفلل، وتوفر مظهرًا متصلًا وفاخرًا للحوائط والأرضيات والأسطح حسب المقاسات المطلوبة.',enDesc:'Large slabs prepared for projects, hotels and villas, offering a continuous premium look for walls, floors and surfaces.'},
- {id:'tiles',ar:'بلاط رخام',en:'Marble Tiles',img:'tiles.jpg',arDesc:'بلاط رخام بمقاسات متعددة حسب الطلب، مناسب للأرضيات والحوائط ويمنح تنفيذًا منظمًا وسهل التركيب للمساحات السكنية والتجارية.',enDesc:'Marble tiles in multiple custom sizes, suitable for floors and walls with organized installation for residential and commercial spaces.'},
- {id:'stairs',ar:'درجات سلالم',en:'Stair Steps',img:'stairs.jpg',arDesc:'درجات سلالم رخام وجرانيت بتشطيب عملي وفاخر، مناسبة للمداخل والعمائر والفلل مع قص دقيق حسب المقاسات المطلوبة.',enDesc:'Marble and granite stair steps with practical premium finishing, suitable for entrances, buildings and villas with precise custom cutting.'},
- {id:'facades',ar:'واجهات خارجية',en:'Exterior Facades',img:'facades.jpg',arDesc:'حلول رخام وجرانيت للواجهات الخارجية تضيف قوة ومظهرًا معماريًا مميزًا، مع اختيار خامات تتحمل طبيعة الاستخدام الخارجي.',enDesc:'Marble and granite solutions for exterior facades, adding strength and a distinctive architectural appearance.'},
- {id:'kitchens',ar:'مطابخ وأسطح',en:'Kitchens & Countertops',img:'kitchens.jpg',arDesc:'أسطح مطابخ من الجرانيت والرخام بتشطيبات أنيقة وعملية، تناسب الاستخدام اليومي وتضيف قيمة جمالية عالية للمطبخ.',enDesc:'Kitchen countertops from granite and marble with elegant practical finishes for daily use and premium visual value.'}
+const products = [
+  // ================= 🟨 الرخام المصري =================
+  {
+    id: 'sunny-menia',
+    discount: true,
+    ar: 'رخام صني منيا',
+    en: 'Sunny Menia Marble',
+    img: 'sunny-menia.jpg',
+    arDesc: 'رخام مصري بيج دافئ من أشهر الخامات المطلوبة في الأرضيات والحوائط والسلالم، يتميز بدرجاته الهادئة وقابليته للتشطيب بأكثر من شكل.',
+    enDesc: 'A warm beige Egyptian marble, highly popular for floors, walls and stairs with flexible finishes.'
+  },
+  {
+    id: 'silvia',
+    ar: 'رخام سيلفيا',
+    en: 'Silvia Marble',
+    img: 'silvia.jpg',
+    arDesc: 'رخام مصري بعروق طبيعية ناعمة وملمس فاخر، مناسب للأرضيات والحوائط وأسطح الاستقبال والمشاريع التي تحتاج لمظهر دافئ.',
+    enDesc: 'Egyptian marble with soft natural veins and refined texture, suitable for floors and reception counters.'
+  },
+  {
+    id: 'triesta',
+    ar: 'رخام تريستا',
+    en: 'Triesta Marble',
+    img: 'triesta.jpg',
+    arDesc: 'خامة رخامية بيج هادئة ومقاومة، تضيف لمسة طبيعية للمساحات الداخلية والتكسيات الخارجية.',
+    enDesc: 'Calm beige marble with distinctive veins, adding a natural luxury touch to interiors and exterior cladding.'
+  },
+  {
+    id: 'galala',
+    ar: 'رخام جلالة',
+    en: 'Galala Marble',
+    img: 'galala.jpg',
+    arDesc: 'رخام مصري بلون كريمي فاتح ومظهر كلاسيكي راقٍ، من أشهر الخامات المعتمدة للمشاريع السكنية والتجارية والتصدير.',
+    enDesc: 'Light creamy Egyptian marble with a classic elegant look, ideal for residential and commercial export projects.'
+  },
+  {
+    id: 'zaafarana',
+    ar: 'رخام زعفرانة',
+    en: 'Zaafarana Marble',
+    img: 'zaafarana.jpg',
+    arDesc: 'يتميز بتجذيعاته الوردي والكريمة الفاخرة، يمنح المساحات والديكورات لمسة جمالية فريدة.',
+    enDesc: 'Features luxurious pink and cream veins, giving spaces and decorations a unique aesthetic touch.'
+  },
+
+  // ================= 🟩 الجرانيت المصري =================
+  {
+    id: 'halaib',
+    ar: 'جرانيت حلايب',
+    en: 'Halaib Granite',
+    img: 'halaib.jpg',
+    arDesc: 'جرانيت أبيض بنقط داكنة منتظمة، يمتاز بصلابة عالية ومقاومة فائقة، مثالي للطرقات والواجهات والدرج.',
+    enDesc: 'White granite with uniform dark spots, known for high durability, ideal for floors, facades and stairs.'
+  },
+  {
+    id: 'new-halaib',
+    ar: 'جرانيت نيو حلايب',
+    en: 'New Halaib Granite',
+    img: 'new-halaib.jpg',
+    arDesc: 'جرانيت مصري عملي بامتياز للأرضيات والمشاريع ذات الاستخدام الكثيف والمساحات الواسعة.',
+    enDesc: 'Practical Egyptian granite perfect for heavy-use flooring, projects and large areas.'
+  },
+  {
+    id: 'gandola',
+    ar: 'جرانيت جندولا',
+    en: 'Gandola Granite',
+    img: 'gandola.jpg',
+    arDesc: 'جرانيت رمادي مموج بصلابة فائقة ومظهر فخم، مناسب جداً للمطابخ والدرج والديكورات.',
+    enDesc: 'Wavy grey granite with superior hardness and luxury look, excellent for kitchens, stairs and decor.'
+  },
+  {
+    id: 'aswan-black',
+    ar: 'جرانيت أسواني أسود',
+    en: 'Aswan Black Granite',
+    img: 'aswan-black.jpg',
+    arDesc: 'جرانيت ناري أسود فاخر، أصلب الأنواع وأكثرها ملاءمة للمطابخ والمداخل الرئيسية والمشاريع الراقية.',
+    enDesc: 'Premium black igneous granite, extremely durable and perfect for kitchens, main entrances and luxury projects.'
+  },
+  {
+    id: 'aswan-red',
+    ar: 'جرانيت أحمر أسواني',
+    en: 'Aswan Red Granite',
+    img: 'aswan-red.jpg',
+    arDesc: 'اللون الأحمر الأصيل والمعروف تاريخياً بقوة تحمله وحضوره القوي في المشاريع الكبرى والواجهات.',
+    enDesc: 'Authentic red granite historically known for extreme strength and strong presence in major projects.'
+  },
+  {
+    id: 'verdi',
+    ar: 'جرانيت فيردي',
+    en: 'Verdi Granite',
+    img: 'verdi.jpg',
+    arDesc: 'يتوفر بالدرجات الخضراء والصفراء المميزة لإضفاء حيوية وتميز على الواجهات والتصميمات الحديثة.',
+    enDesc: 'Available in distinctive green and yellow tones to add vitality to modern facades and designs.'
+  },
+  {
+    id: 'grey-company',
+    ar: 'جرانيت رمادي شركة',
+    en: 'Grey Company Granite',
+    img: 'grey-company.jpg',
+    arDesc: 'خامة رمادية عملية واقتصادية جداً للتوريدات الكبيرة والمشاريع العامة والأرضيات.',
+    enDesc: 'Practical and economic grey granite, highly suitable for large supply orders, public projects and paving.'
+  },
+  {
+    id: 'rosa',
+    ar: 'جرانيت روزا',
+    en: 'Rosa Granite',
+    img: 'rosa.jpg',
+    arDesc: 'جرانيت بدرجات الوردي الناعمة المتميزة، مناسب للواجهات والأرضيات الداخلية والخارجية.',
+    enDesc: 'Granite with refined soft pink tones, ideal for facades and indoor/outdoor flooring.'
+  }
 ];
+
 const grid=document.getElementById('productsGrid');
 function t(ar,en){return currentLang==='ar'?ar:en}
 function renderProducts(){grid.innerHTML='';products.forEach(p=>{const card=document.createElement('article');card.className='product-card reveal '+(p.discount?'discount':'');card.innerHTML=`<span class="discount-badge">${t('يوجد خصم','Discount Available')}</span><img src="${p.img}" alt="${t(p.ar,p.en)}"><div class="product-info"><h3>${t(p.ar,p.en)}</h3><p>${t(p.arDesc,p.enDesc).slice(0,125)}...</p><button class="primary-btn mini-buy">${t('شراء عبر واتساب','Order on WhatsApp')}</button></div>`;card.addEventListener('click',e=>{if(e.target.classList.contains('mini-buy')){openWhatsAppProduct(p);return}openProductModal(p)});grid.appendChild(card)});observeReveal()}
