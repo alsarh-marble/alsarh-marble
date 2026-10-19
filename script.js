@@ -1,5 +1,4 @@
-
-const WHATSAPP='201130102500';
+Const WHATSAPP='201130102500';
 let currentLang='ar';
 const products = [
   // ================= 🟨 الرخام المصري =================
@@ -177,3 +176,36 @@ function animateBars(){document.querySelectorAll('.client-row').forEach(row=>{if
 let observer;function observeReveal(){if(observer)observer.disconnect();observer=new IntersectionObserver(entries=>{entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('visible');if(en.target.classList.contains('stats-grid')||en.target.closest('.stats'))animateCounts();if(en.target.classList.contains('client-bars')||en.target.closest('.clients'))animateBars();}})},{threshold:.18});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el))}
 window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',scrollY>30)});
 renderProducts();setLang('ar');observeReveal();
+
+// ==========================================
+// 🚀 Exit Intent Popup Logic (برمجة نافذة الخروج)
+// ==========================================
+let popupShown = false;
+
+function showExitPopup() {
+    const exitPopup = document.getElementById('exitPopup');
+    if (exitPopup && !popupShown && !sessionStorage.getItem('exitPopupSeen')) {
+        exitPopup.style.display = 'flex';
+        popupShown = true;
+        sessionStorage.setItem('exitPopupSeen', 'true');
+    }
+}
+
+function closeExitPopup() {
+    const exitPopup = document.getElementById('exitPopup');
+    if (exitPopup) {
+        exitPopup.style.display = 'none';
+    }
+}
+
+// 1. رصد تحرك الماوس لأعلى الشاشة لنية الخروج (الكمبيوتر)
+document.addEventListener('mouseleave', function(e) {
+    if (e.clientY < 0) {
+        showExitPopup();
+    }
+});
+
+// 2. رصد محاولة العودة للخلف (الموبايل)
+window.addEventListener('popstate', function() {
+    showExitPopup();
+});
